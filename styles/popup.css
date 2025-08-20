@@ -934,6 +934,25 @@ body {
   transform: translateY(-1px) scale(1.02) !important;
 }
 
+/* Instances List Scrollbar */
+.instances-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.instances-list::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+}
+
+.instances-list::-webkit-scrollbar-thumb {
+  background: rgba(0, 122, 255, 0.3);
+  border-radius: 3px;
+}
+
+.instances-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 122, 255, 0.5);
+}
+
 .instance-action-btn.ssh-btn:hover {
   background: linear-gradient(135deg, #0056cc 0%, #004bb8 100%) !important;
   box-shadow: 0 4px 16px rgba(0, 122, 255, 0.3) !important;
