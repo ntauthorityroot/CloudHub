@@ -666,10 +666,10 @@ body {
   -webkit-backdrop-filter: blur(30px) saturate(180%);
   border: 0.5px solid rgba(255, 255, 255, 0.3);
   border-radius: 20px;
-  padding: 0;
-  max-width: 380px;
-  max-height: 520px;
-  width: 380px;
+  padding: 28px;
+  max-width: 90%;
+  max-height: 80%;
+  width: 600px;
   overflow-y: auto;
   box-shadow: 
     0 20px 60px rgba(0, 0, 0, 0.15),
@@ -702,6 +702,11 @@ body {
 
 .modal-content::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.2);
+}
+
+.modal-body {
+  display: block !important;
+  width: 100% !important;
 }
 
 .modal-header {
@@ -763,6 +768,10 @@ body {
     0 4px 16px rgba(0, 0, 0, 0.06),
     0 1px 4px rgba(0, 0, 0, 0.04),
     inset 0 1px 0 rgba(255, 255, 255, 0.7) !important;
+  width: 100% !important;
+  display: block !important;
+  box-sizing: border-box !important;
+  flex: none !important;
 }
 
 .instance-card:hover {
@@ -775,9 +784,11 @@ body {
 }
 
 .instances-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  width: 100% !important;
+  flex-wrap: nowrap !important;
 }
 
 .modal-actions {
