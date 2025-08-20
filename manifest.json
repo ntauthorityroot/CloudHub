@@ -1,0 +1,64 @@
+{
+  "manifest_version": 3,
+  "name": "CloudHub - Multi-Cloud Manager",
+  "version": "1.0.0",
+  "description": "Unified dashboard and quick actions for AWS, GCP, Azure, and DigitalOcean resources",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "tabs",
+    "scripting",
+    "contextMenus",
+    "notifications",
+    "clipboardWrite"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "host_permissions": [
+    "https://*.amazonaws.com/*",
+    "https://*.digitalocean.com/*",
+    "https://*.googleapis.com/*",
+    "https://*.microsoft.com/*",
+    "https://*.azure.com/*",
+    "https://*.windows.net/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "CloudHub Dashboard",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.aws.amazon.com/*",
+        "https://*.console.aws.amazon.com/*",
+        "https://console.cloud.google.com/*",
+        "https://portal.azure.com/*",
+        "https://cloud.digitalocean.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/*"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
